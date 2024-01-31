@@ -60,13 +60,21 @@ public class Autobus {
         return bus;
     }
 
-    //Debería hacer un metodo a parte para ver si el asiento existe y está libre antes
+    
     public void reservarAsiento(String numAsiento, boolean movReducida) {
         if (!movReducida) {
             for (int i = 0; i < this.autobus.length; i++) {
                 for (int j = 0; j < this.autobus[i].length; j++) {
                     if (numAsiento.equals(this.autobus[i][j].getNumeroAsiento())) {
-                        if (this.autobus[i][j].getEstado().equals(Estado.LIBRE)) {
+                        if (this.autobus[i][j].getEstado().equals(Estado.LIBRE) 
+                                && (i-1>0 && this.autobus[i-1][j].getEstado().equals(Estado.LIBRE))
+                                && (i-1>0 && j+1<this.autobus[i].length && this.autobus[i-1][j+1].getEstado().equals(Estado.LIBRE))
+                                && (j+1<this.autobus[i].length && this.autobus[i][j+1].getEstado().equals(Estado.LIBRE))
+                                && (i+1>this.autobus.length && j+1<this.autobus[i].length && this.autobus[i+1][j+1].getEstado().equals(Estado.LIBRE))
+                                && (i+1>this.autobus.length && this.autobus[i+1][j].getEstado().equals(Estado.LIBRE))
+                                && (i+1>this.autobus.length && j-1>0 && this.autobus[i+1][j-1].getEstado().equals(Estado.LIBRE))
+                                && (j-1>0 && this.autobus[i][j-1].getEstado().equals(Estado.LIBRE))
+                                && (i-1>0 && j-1>0 && this.autobus[i-1][j-1].getEstado().equals(Estado.LIBRE))) {
                             this.autobus[i][j].setEstado(Estado.RESERVADO);
                         } else {
                             System.out.println("El asiento " + numAsiento + " está ocupado");
@@ -75,7 +83,25 @@ public class Autobus {
                 }
             }
         }else{
-            
+            for (int i = 0; i < this.autobus.length; i++) {
+                for (int j = 0; j < this.autobus[i].length; j++) {
+                    if (numAsiento.equals(this.autobus[i][j].getNumeroAsiento())) {
+                        if (this.autobus[i][j].getEstado().equals(Estado.LIBRE) 
+                                && (i-1>0 && this.autobus[i-1][j].getEstado().equals(Estado.LIBRE))
+                                && (i-1>0 && j+1<this.autobus[i].length && this.autobus[i-1][j+1].getEstado().equals(Estado.LIBRE))
+                                && (j+1<this.autobus[i].length && this.autobus[i][j+1].getEstado().equals(Estado.LIBRE))
+                                && (i+1>this.autobus.length && j+1<this.autobus[i].length && this.autobus[i+1][j+1].getEstado().equals(Estado.LIBRE))
+                                && (i+1>this.autobus.length && this.autobus[i+1][j].getEstado().equals(Estado.LIBRE))
+                                && (i+1>this.autobus.length && j-1>0 && this.autobus[i+1][j-1].getEstado().equals(Estado.LIBRE))
+                                && (j-1>0 && this.autobus[i][j-1].getEstado().equals(Estado.LIBRE))
+                                && (i-1>0 && j-1>0 && this.autobus[i-1][j-1].getEstado().equals(Estado.LIBRE))) {
+                            this.autobus[i][j].setEstado(Estado.MOVILIDAD_REDUCIDA);
+                        } else {
+                            System.out.println("El asiento " + numAsiento + " está ocupado");
+                        }
+                    }
+                }
+            }
         }
 
     }

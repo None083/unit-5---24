@@ -25,6 +25,16 @@ public class Estación {
         System.out.println(b1);
         System.out.println("Introduce un número de asiento");
         b1.reservarAsiento(teclado.nextLine(), false);
+        System.out.println(b1);
+        System.out.println("Introduce un número de asiento");
+        b1.reservarAsiento(teclado.nextLine(), false);
+        System.out.println(b1);
+        System.out.println("Introduce un número de asiento");
+        b1.reservarAsiento(teclado.nextLine(), false);
+        System.out.println(b1);
+        System.out.println("Introduce un número de asiento");
+        b1.reservarAsiento(teclado.nextLine(), false);
+        System.out.println(b1);
         
     }
     

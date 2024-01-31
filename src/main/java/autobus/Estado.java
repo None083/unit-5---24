@@ -11,7 +11,8 @@ package autobus;
 public enum Estado {
 
     LIBRE("Libre"),
-    RESERVADO("Reservado");
+    RESERVADO("Reservado"),
+    MOVILIDAD_REDUCIDA("Movilidad reducida");
     
     private final String ESTADO;
 
