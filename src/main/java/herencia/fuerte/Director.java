@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Record.java to edit this template
  */
-package ejemplomatriz;
+package herencia.fuerte;
 
 /**
  *
- * @author FX506
+ * @author noelia
  */
-public record Celda(int fila, int columna) {
+public record Director(String nombre, String apellido, String nif, double sueldo) {
 
 }

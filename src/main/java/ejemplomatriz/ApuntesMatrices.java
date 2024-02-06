@@ -9,7 +9,7 @@ package ejemplomatriz;
  * @author noelia
  * 
  */
-public class Unit5 {
+public class ApuntesMatrices {
 
     public static void main(String[] args) {
         

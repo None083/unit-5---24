@@ -67,14 +67,14 @@ public class Ejer25Enero {
         }
     }
     
-    public static ArrayList<Celda> celdasChar(char matriz[][], char c){
+    public static ArrayList<Celda25Enero> celdasChar(char matriz[][], char c){
         
-        ArrayList<Celda> listaCeldas = new ArrayList<>();
+        ArrayList<Celda25Enero> listaCeldas = new ArrayList<>();
         
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if(matriz[i][j] == c){
-                    listaCeldas.add(new Celda(i, j));
+                    listaCeldas.add(new Celda25Enero(i, j));
                 }
             }
         }
