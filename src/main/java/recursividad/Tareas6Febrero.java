@@ -18,18 +18,26 @@ public class Tareas6Febrero {
     public static void main(String[] args) {
 
         char arrayChar[] = {'a', 'b', 'c', 'd', 'e', 'f'};
-
-        System.out.println(imprimirArrayRecursivo(arrayChar, 0));
-
+        imprimirArrayRecursivo(arrayChar, 0);
+        System.out.println("-------");
+        
+        int arrayInt[] = {1, 2, 3, 4, 5};
+        System.out.println(sumarElementosRecursivo(arrayInt, 0));
     }
 
-    private static char imprimirArrayRecursivo(char[] array, int posicion) {
-
+    private static void imprimirArrayRecursivo(char[] array, int posicion) {
         if (posicion < array.length) {
-            return array[posicion];
+            System.out.println(array[posicion]);
+            imprimirArrayRecursivo(array, ++posicion);
         }
-        imprimirArrayRecursivo(array, posicion);
-        return array[array.length];
+    }
+
+    private static int sumarElementosRecursivo(int[] array, int posicion) {
+        if (posicion == array.length - 1) {
+            return array[posicion];
+        } else {
+            return array[posicion] + sumarElementosRecursivo(array, ++posicion);
+        }
     }
 
 }
