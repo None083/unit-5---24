@@ -4,6 +4,9 @@
  */
 package ut06ejer1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author FX506
@@ -13,10 +16,16 @@ public class Pruebas {
     public static void main(String[] args) {
         
         Persiana persiana = new Persiana();
+        Persiana persiana2 = new Persiana();
         Ventana ventana = new Ventana(persiana);
+        Ventana ventana2 = new Ventana(persiana2);
+        List<Ventana> ventanas = new ArrayList<>();
+        
         Puerta puerta = new Puerta();
+        
         Calefactor calefactor = new Calefactor(21);
-        Casa casa = new Casa(ventana, puerta, calefactor);
+        
+        Casa casa = new Casa(ventanas, puerta, calefactor);
         
         System.out.println(casa);
         System.out.println("---------------------------------------------------");
@@ -34,8 +43,8 @@ public class Pruebas {
         casa.getPuerta().abrir();
         
         //Bajo la persiana y abro la ventana
-        casa.getVentana().getPersiana().bajar();
-        casa.getVentana().abrir();
+        casa.getVentanas().get(0).getPersiana().bajar();
+        casa.getVentanas().get(1).abrir();
         
         
         System.out.println(casa);

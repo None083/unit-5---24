@@ -11,7 +11,7 @@ package recursividad;
 public class Tareas6Febrero {
 
     /**
-     * 1. Recorrer una array de forma recursiva e imprimir valores.
+     * 1. Recorrer un array de forma recursiva e imprimir valores.
      *
      * 2. Sumar de forma recursiva los elementos de un array.
      */
