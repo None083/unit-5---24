@@ -15,6 +15,13 @@ public class Pruebas {
         Calendario c1 = new Calendario(2, 2024);
         
         System.out.println(c1.toString());
+        System.out.println(Calendario.diaSemana(c1, 40));
+        
+//        Calendario[] cAnual = Calendario.calendarioAnual(2024);
+//        
+//        for (Calendario cMensual : cAnual) {
+//            System.out.println(cMensual);
+//        }
         
     }
     

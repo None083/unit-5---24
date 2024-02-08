@@ -4,8 +4,9 @@
  */
 package calendario;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.time.Month;
+import java.util.Locale;
 
 /**
  *
@@ -21,14 +22,14 @@ public class Calendario {
         this.calendario = new int[6][7];
         this.mes = mes;
         this.anyo = anyo;
-        
+
         LocalDate fecha = LocalDate.of(anyo, mes, 1);
         int diaInicio = fecha.getDayOfWeek().getValue();
         int contadorDia = 1;
-        
+
         for (int i = 0; i < this.calendario.length; i++) {
             for (int j = 0; j < this.calendario[i].length; j++) {
-                
+
                 if (i == 0 && j < diaInicio - 1) {
                     // Espacios en blanco antes del primer día
                     this.calendario[i][j] = 0;
@@ -66,20 +67,39 @@ public class Calendario {
 
     @Override
     public String toString() {
-        
+
         String txt = "L\tM\tX\tJ\tV\tS\tD\n";
-        
+
         for (int i = 0; i < this.calendario.length; i++) {
             for (int j = 0; j < this.calendario[i].length; j++) {
-                if(this.calendario[i][j] == 0){
+                if (this.calendario[i][j] == 0) {
                     txt += " \t";
-                }else{
+                } else {
                     txt += this.calendario[i][j] + "\t";
                 }
             }
             txt += "\n";
         }
         return txt;
+    }
+
+    public static String diaSemana(Calendario c, int dia) {
+        try{
+            return LocalDate.of(c.getAnyo(), c.getMes(), dia)
+                .getDayOfWeek().getDisplayName(java.time.format.TextStyle.FULL,
+                        new Locale("es", "ES"));
+        }catch(DateTimeException dte){
+            throw new IllegalArgumentException("Ese día no existe");
+        }
+    }
+    
+    public static Calendario[] calendarioAnual(int anyo){
+        final int MESES_ANYO = 12;
+        Calendario[] cAnual = new Calendario[MESES_ANYO];
+        for (int i = 0; i < cAnual.length; i++) {
+            cAnual[i] = new Calendario(i+1, anyo);
+        }
+        return cAnual;
     }
 
 }
