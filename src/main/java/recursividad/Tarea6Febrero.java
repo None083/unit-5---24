@@ -8,7 +8,7 @@ package recursividad;
  *
  * @author noelia
  */
-public class Tareas6Febrero {
+public class Tarea6Febrero {
 
     /**
      * 1. Recorrer un array de forma recursiva e imprimir valores.
