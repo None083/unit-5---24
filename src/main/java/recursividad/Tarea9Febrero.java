@@ -33,11 +33,15 @@ public class Tarea9Febrero {
         for (Map.Entry<Integer, Integer> entry : vecesNumeroRepetido.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
+        
         System.out.println("--------------");
-        Set<Integer> listaSinDuplicados = listaSinDuplicados(arrayNum);
+        List<Integer> listaSinDuplicados = listaSinDuplicados(arrayNum);
         for (Integer i : listaSinDuplicados) {
             System.out.println(i);
         }
+        
+        System.out.println("--------------");
+        System.out.println("Posición del 3: " + posicionElemento(listaSinDuplicados, 0, 3));
         
     }
     
@@ -55,18 +59,26 @@ public class Tarea9Febrero {
         return listaRepetidos;
     }
     
-    private static Set<Integer> listaSinDuplicados(int[] array){
-        Set<Integer> lista = new HashSet<>();
+    private static List<Integer> listaSinDuplicados(int[] array){
+        List<Integer> lista = new ArrayList<>();
         
         for (int i : array) {
-            lista.add(i);
+           if(!lista.contains(i)){
+                lista.add(i);
+            }
         }
-        
         return lista;
     }
     
-    private static int posionElemento(List<> lista, int posicion, int elemento){
-        
+    private static int posicionElemento(List<Integer> lista, int posicion, int elemento){
+        if (posicion < lista.size()) {
+            if (lista.get(posicion) == elemento) {
+                return posicion;
+            } else {
+                return posicionElemento(lista, ++posicion, elemento);
+            }
+        }
+        return -1;
     }
     
 }
