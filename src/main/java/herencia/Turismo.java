@@ -86,4 +86,9 @@ public class Turismo extends Vehiculo {
         System.out.println("Añadiendo rueda...");
     }
     
+    @Override
+    public void pasarITV(){
+        System.out.println("Soy un turismo y estoy pasando la ITV");
+    }
+    
 }

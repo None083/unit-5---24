@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author noelia
  */
-public class Vehiculo {
+public abstract class Vehiculo {
 
     private String matricula;
     private String bastidor;
@@ -112,4 +112,5 @@ public class Vehiculo {
         this.tarifaAlquiler -=cantidad;
     }
     
+    public abstract void pasarITV();
 }
