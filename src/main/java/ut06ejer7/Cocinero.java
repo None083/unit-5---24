@@ -17,16 +17,22 @@ public class Cocinero extends Trabajador {
         this.especialidad = especialidad;
     }
 
-    public Cocinero(String nombre, String apellido1, String NIF) {
-        super(nombre, apellido1, NIF);
-    }
-
     public String getEspecialidad() {
         return especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Cocinero{");
+        sb.append(super.toString());
+        sb.append("especialidad=").append(especialidad);
+        sb.append('}');
+        return sb.toString();
     }
     
     

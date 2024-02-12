@@ -20,6 +20,18 @@ public class Camarero extends Trabajador {
         this.rango = rango;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Camarero{");
+        sb.append(super.toString());
+        sb.append("rango=").append(rango);
+        sb.append('}');
+        return sb.toString();
+    }
+    
+    
+
     // Método propio de camarero
     public void servirMesa() {
         System.out.println("Objeto Camarero: Sirviendo una mesa");

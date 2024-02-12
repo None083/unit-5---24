@@ -22,6 +22,17 @@ public abstract class Trabajador {
         this.apellido1 = apellido1;
         this.NIF = NIF;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("nombre=").append(nombre);
+        sb.append(", apellido1=").append(apellido1);
+        sb.append(", NIF=").append(NIF + ", ");
+        return sb.toString();
+    }
+    
+    
     
     public abstract void cotizar();   
 	// Se omiten getters y setters
