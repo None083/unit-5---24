@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ut06ejer7;
+package ut06ejer07;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -38,6 +40,17 @@ public class Pruebas {
         for (Trabajador t : trabajadores) {
             System.out.println(t);
             t.cotizar();
+        }
+        
+        Set<CursosReciclado> hacenCursos = new HashSet();
+        hacenCursos.add(ca2);//Sólo me deja añadir a los camareros, cocineros no
+        
+        for (CursosReciclado c : hacenCursos) {
+            c.hacerCurso(300);
+            
+            if(c instanceof Cocinero){
+                ((Cocinero) c).getEspecialidad();
+            }
         }
         
     }

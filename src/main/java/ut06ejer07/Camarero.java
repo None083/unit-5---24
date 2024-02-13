@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ut06ejer7;
+package ut06ejer07;
 
 /**
  *
  * @author noelia
  */
-public class Camarero extends Trabajador {
+public class Camarero extends Trabajador implements CursosReciclado {
 
     // Único atributo propio de Camarero
     private String rango;
@@ -41,6 +41,13 @@ public class Camarero extends Trabajador {
     @Override
     public void cotizar() {
         System.out.println("Cotizando como Camarero");
+    }
+
+    @Override
+    public void hacerCurso(int numeroHoras) {
+        if(numeroHoras > 20){
+            System.out.println("Curso completado");
+        }
     }
 
 }
