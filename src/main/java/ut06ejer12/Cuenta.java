@@ -38,6 +38,10 @@ public abstract class Cuenta {
     public void setCliente(Persona cliente) {
         this.cliente = cliente;
     }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
     
     public abstract void actualizarSaldo();
     
