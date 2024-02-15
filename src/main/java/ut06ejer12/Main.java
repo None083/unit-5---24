@@ -25,7 +25,14 @@ public class Main {
         cuentas.add(ca1);
         cuentas.add(cc1);
         
-        ca1.actualizarSaldo();
+        for (Cuenta c : cuentas) {
+            System.out.println("Antes: " + c);
+            c.actualizarSaldo();
+            c.retirar(20);
+            System.out.println("Después: " + c);
+            System.out.println("----------------------------------------------");
+        }
+        
         
     }
     
