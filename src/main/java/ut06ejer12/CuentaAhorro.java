@@ -59,9 +59,11 @@ public class CuentaAhorro extends Cuenta {
     public void retirar(double cantidad) {
         if(this.getSaldo() > 0){
             this.setSaldo(this.getSaldo() - cantidad);
-        }else{
-            System.out.println("No hay saldo");
         }
+    }
+    
+    public void quitarComision(){
+        this.comisionAnual = 0;
     }
 
 }

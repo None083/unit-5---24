@@ -61,8 +61,6 @@ public class CuentaCorriente extends Cuenta {
     public void retirar(double cantidad) {
         if (cantidad <= this.saldoMin) {
             this.setSaldo(this.getSaldo() - cantidad);
-        }else{
-            System.out.println("No hay saldo suficiente");
         }
     }
     

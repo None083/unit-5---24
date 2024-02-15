@@ -31,7 +31,14 @@ public class Main {
             c.retirar(20);
             System.out.println("Después: " + c);
             System.out.println("----------------------------------------------");
+            
+            if(c instanceof CuentaAhorro){
+                ((CuentaAhorro) c).quitarComision();
+            }
+            
         }
+        
+        
         
         
     }
