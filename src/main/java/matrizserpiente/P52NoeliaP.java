@@ -42,67 +42,51 @@ public class P52NoeliaP {
                     c1 = new Coordenada(i, j);
                     lista.add(c1);
                     matriz[c1.fila()][c1.columna()] = 8;
-
-//                    if (matriz[i][j + 1] == 1) {
-//
-//                        lista.add(new Coordenada(i, j + 1));
-//                        matriz[i][j + 1] = 8;
-//
-//                    } else if (matriz[i + 1][j] == 1) {
-//
-//                        lista.add(new Coordenada(i + 1, j));
-//                        matriz[i + 1][j] = 8;
-//
-//                    } else if (matriz[i][j - 1] == 1) {
-//
-//                        lista.add(new Coordenada(i, j - 1));
-//                        matriz[i][j - 1] = 8;
-//
-//                    } else if (matriz[i - 1][j] == 1) {
-//
-//                        lista.add(new Coordenada(i - 1, j));
-//                        matriz[i - 1][j] = 8;
-//
-//                    }
                 }
 
             }
-
-            Coordenada aux = new Coordenada(c1.fila(), c1.columna());
-            boolean terminado = false;
-
-            do {
-
-                if (matriz[aux.fila()][aux.columna() + 1] == 1) {
-
-                    lista.add(new Coordenada(aux.fila(), aux.columna() + 1));
-                    matriz[aux.fila()][aux.columna() + 1] = 8;
-                    aux = new Coordenada(aux.fila(), aux.columna() + 1);
-
-                } else if (matriz[aux.fila() + 1][aux.columna()] == 1) {
-
-                    lista.add(new Coordenada(aux.fila() + 1, aux.columna()));
-                    matriz[aux.fila() + 1][aux.columna()] = 8;
-                    aux = new Coordenada(aux.fila() + 1, aux.columna());
-
-                } else if (matriz[aux.fila()][aux.columna() - 1] == 1) {
-
-                    lista.add(new Coordenada(aux.fila(), aux.columna() - 1));
-                    matriz[aux.fila()][aux.columna() - 1] = 8;
-                    aux = new Coordenada(aux.fila(), aux.columna() - 1);
-
-                } else if (matriz[aux.fila() - 1][aux.columna()] == 1) {
-
-                    lista.add(new Coordenada(aux.fila() - 1, aux.columna()));
-                    matriz[aux.fila() - 1][aux.columna()] = 8;
-                    aux = new Coordenada(aux.fila() - 1, aux.columna());
-
-                } else {
-                    terminado = true;
-                }
-            } while (!terminado);
-
         }
+        Coordenada aux = new Coordenada(c1.fila(), c1.columna());
+        boolean terminado = false;
+
+        do {
+            try{
+                
+            }catch(IndexOutOfBoundsException iobe){
+                
+            }
+            if (matriz[aux.fila()][aux.columna() + 1] == 1) {
+
+                lista.add(new Coordenada(aux.fila(), aux.columna() + 1));
+                matriz[aux.fila()][aux.columna() + 1] = 8;
+                aux = new Coordenada(aux.fila(), aux.columna() + 1);
+
+            } else if (matriz[aux.fila() + 1][aux.columna()] == 1) {
+
+                lista.add(new Coordenada(aux.fila() + 1, aux.columna()));
+                matriz[aux.fila() + 1][aux.columna()] = 8;
+                aux = new Coordenada(aux.fila() + 1, aux.columna());
+
+            } else if (matriz[aux.fila()][aux.columna() - 1] == 1) {
+
+                lista.add(new Coordenada(aux.fila(), aux.columna() - 1));
+                matriz[aux.fila()][aux.columna() - 1] = 8;
+                aux = new Coordenada(aux.fila(), aux.columna() - 1);
+
+            } else if (matriz[aux.fila() - 1][aux.columna()] == 1) {
+
+                lista.add(new Coordenada(aux.fila() - 1, aux.columna()));
+                matriz[aux.fila() - 1][aux.columna()] = 8;
+                aux = new Coordenada(aux.fila() - 1, aux.columna());
+                
+            }else if(aux.fila() < matriz.length || aux.columna() < matriz.length){
+                
+                aux = new Coordenada(aux.fila(), aux.columna() + 1);
+                
+            } else {
+                terminado = true;
+            }
+        } while (!terminado);
 
         return lista;
     }

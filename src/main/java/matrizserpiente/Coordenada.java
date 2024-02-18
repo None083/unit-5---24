@@ -6,7 +6,7 @@ package matrizserpiente;
 
 /**
  *
- * @author noelia
+ * @author FX506
  */
 public record Coordenada(int fila, int columna) {
 
