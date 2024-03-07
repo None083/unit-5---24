@@ -32,9 +32,12 @@ public class Pila {
     }
     
     public String sacarElemento(){
-        String elemento = this.lista.get(0);
-        this.lista.remove(0);
-        return elemento;
+        if (!this.lista.isEmpty()) {
+            this.lista.remove(this.lista.size() - 1);
+            return this.lista.get(this.lista.size() - 1);
+        } else {
+            return null;
+        }
     }
     
     public boolean estaVacia(){
@@ -42,7 +45,7 @@ public class Pila {
     }
     
     public boolean estaLlena(){
-        return !this.lista.isEmpty();
+        return this.lista.size() == this.tamanyoMax;
     }
 
     @Override
@@ -58,10 +61,4 @@ public class Pila {
         return this.lista.size()+1;
     }
 
-    public int getTamanyoMax() {
-        return tamanyoMax;
-    }
-    
-    
-    
 }
